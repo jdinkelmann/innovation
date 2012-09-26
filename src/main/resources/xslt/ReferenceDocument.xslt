@@ -16,13 +16,8 @@
 	<xsl:include href="xslt/CommonExclusions.xslt" />
 
 	<xsl:template match="/gift-doc:document">
-		<h1> 
-          <xsl:value-of select="//meta:title-display"/> 
-     	</h1>
+		<xsl:apply-templates select="gift-doc:body" />
+		<xsl:apply-templates select="table:table"/>
 	</xsl:template>
-	<xsl:template match="/gift-doc:document/gift-doc:body">
-		<h1> 
-          <xsl:value-of select="//essay:pre"/> 
-     	</h1>
-	</xsl:template>
+
 </xsl:stylesheet>
