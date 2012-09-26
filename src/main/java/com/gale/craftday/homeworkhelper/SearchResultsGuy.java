@@ -9,6 +9,8 @@ public class SearchResultsGuy extends KnowItAllGuy {
 
 		String searchRequestURL = constructSearchRequestURL(query, contentSets,
 				displayGroups);
+		
+		System.out.println("searchRequestURL =" + searchRequestURL);
 
 		String searchResults = makeRequest(searchRequestURL);
 
