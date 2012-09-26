@@ -40,7 +40,7 @@
          <img src="images/logo.png">
          <form name="search" action="" class="form-horizontal">
             <input type="hidden" value="ZXAA-MOD1|ZXACC-MOD1|ZXAL-VRL|ZXAE-VRL|History-US-Misc" name="contentSets" id="contentSets">
-            <input type="hidden" value="K12-News" name="displayGroups" id="displayGroups">
+            <input type="hidden" value="History-Reference" name="displayGroups" id="displayGroups">
             <label for="search">Locate U.S. History Aritcles</label>
             <div class="input-append">
                    <input id="query" name="query" type="search" class="span4" type="text"><button id="submitSearch" class="btn" type="button">Go!</button>
