@@ -1,0 +1,31 @@
+{
+    "name": "Gale.USHistoryInContext",
+    "displayName": "U.S. History in Context",
+    "version": "1.0",
+    "creator": "Cengage Learning",
+    "rootURI": "http://innovation.jdinkelmann.cloudbees.net",
+    "helpURI": "/help.html",
+    "authScheme": "none",
+    "dockItems": {
+        "enter_chat": {
+            "icon": "/images/icon_history_rc_us.gif",
+            "label": "Search U.S. History in Context",
+            "action": {
+                "uri": "/index.jsp",
+                "width": 600
+            }
+        }
+    },
+    "contextMenuItems": {
+        "enter_chat": {
+            "categories": [
+                "reading"
+            ],
+            "label": "Search in U.S. History in Context",
+            "action": {
+                "uri": "/index.jsp",
+                "width": 600
+            }
+        }
+    }
+}

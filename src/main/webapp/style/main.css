@@ -1,0 +1,52 @@
+#galeContentWrapper {
+	width: 550px;
+	margin: 10px;
+}
+#galeContentWrapper header {
+	overflow: hidden;
+	margin: 0 10px;
+}
+
+#galeContentWrapper header img {
+	float: left;
+	margin-right: 20px
+}
+
+#galeContentWrapper header label {
+	display: none;
+}
+
+#galeContentWrapper header form {
+	margin-left:  10px;
+}
+
+#galeContentWrapper header form input[type=search] {
+	width: 255px;
+	font-size: 20px;
+}
+
+#galeContentWrapper section {
+	display: none;
+}
+
+#galeContentWrapper section {
+	margin: 10px;
+	border: 1px solid #CCCCCC;
+}
+
+#galeContentWrapper section ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#galeContentWrapper section ul li {
+	list-style-type: none;
+	padding: 10px;
+	border-top: 1px solid #ccc;
+}
+
+#galeContentWrapper section ul li:first-child {
+	border-top: none;
+}
+
