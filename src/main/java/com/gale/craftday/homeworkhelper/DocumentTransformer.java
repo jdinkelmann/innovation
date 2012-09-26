@@ -17,7 +17,6 @@ public class DocumentTransformer {
 	private static final String DEFAULT_DOCUMENT_XSLT = "xslt/ReferenceDocument.xslt";
 
 	public String convertToHTML(String xml) {
-		System.out.println(xml);	
 		InputStream xslStream = openXslStream(DEFAULT_DOCUMENT_XSLT);
 		Transformer transformer = makeTransformer(xslStream);
 		return doTransform(transformer, xml);
