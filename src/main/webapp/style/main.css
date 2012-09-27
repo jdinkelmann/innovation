@@ -1,52 +1,71 @@
 #galeContentWrapper {
-	width: 550px;
-	margin: 10px;
+  width: 550px;
+  margin: 10px;
+  padding: 0 10px;
+  /* end header */
+
+  /* end section */
+
+  /* end documentBody */
+
 }
 #galeContentWrapper header {
-	overflow: hidden;
-	margin: 0 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #333333;
 }
-
 #galeContentWrapper header img {
-	float: left;
-	margin-right: 20px
+  float: left;
+  margin-right: 20px;
 }
-
 #galeContentWrapper header label {
-	display: none;
+  display: none;
 }
-
 #galeContentWrapper header form {
-	margin-left:  10px;
+  margin-left: 10px;
 }
-
 #galeContentWrapper header form input[type=search] {
-	width: 255px;
-	font-size: 20px;
+  width: 255px;
+  font-size: 20px;
 }
-
 #galeContentWrapper section {
-	display: none;
+  display: none;
+  margin: 10px;
+  border: 1px solid #CCCCCC;
 }
-
-#galeContentWrapper section {
-	margin: 10px;
-	border: 1px solid #CCCCCC;
-}
-
 #galeContentWrapper section ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-
 #galeContentWrapper section ul li {
-	list-style-type: none;
-	padding: 10px;
-	border-top: 1px solid #ccc;
+  list-style-type: none;
+  padding: 10px;
+  border-top: 1px solid #ccc;
 }
-
 #galeContentWrapper section ul li:first-child {
-	border-top: none;
+  border-top: none;
 }
-
+#galeContentWrapper #documentBody {
+  margin: 10px 0 0 0;
+}
+#galeContentWrapper #documentBody p {
+  margin: 0 0 25px 0;
+  line-height: 140%;
+}
+#galeContentWrapper #documentBody h1 {
+  font-size: 22px;
+  background: url('../images/h1_border_bottom.gif') bottom repeat-x;
+  margin-bottom: 20px;
+}
+#galeContentWrapper #documentBody .Other blockquote {
+  display: none;
+}
+#galeContentWrapper #documentBody .bold {
+  font-weight: 700;
+}
+#galeContentWrapper #documentBody .italics {
+  font-style: italic;
+}
+#galeContentWrapper #documentBody .smallLetters {
+  font-size: 75%;
+}

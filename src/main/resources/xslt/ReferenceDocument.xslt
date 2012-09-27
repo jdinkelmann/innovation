@@ -16,8 +16,38 @@
 	<xsl:include href="xslt/CommonExclusions.xslt" />
 
 	<xsl:template match="/gift-doc:document">
-		<xsl:apply-templates select="gift-doc:body" />
-		<xsl:apply-templates select="table:table"/>
+		<html>
+			<head>
+				<title>U.S. History in Context</title>
+				<link rel="stylesheet" type="text/css" href="/style/bootstrap.css" />
+   				<link rel="stylesheet" type="text/css" href="/style/main.css" />
+   				
+			</head>
+			<body>
+				<div id="galeContentWrapper" class="history">
+				   	<header>
+				         <img src="/images/logo.png" />
+				         <form name="search" class="form-horizontal">
+				            <input type="hidden" value="ZXAA-MOD1|ZXACC-MOD1|ZXAL-VRL|ZXAE-VRL|History-US-Misc" name="contentSets" id="contentSets" />
+				            <input type="hidden" value="History-Reference" name="displayGroups" id="displayGroups" />
+				            <label for="search">Locate U.S. History Aritcles</label>
+				            <div class="input-append">
+				                   <input id="query" name="query" class="span4" type="search" />
+				                   <button id="submitSearch" class="btn" type="button">Go!</button>
+				            </div>
+				         </form>
+				    </header>
+				    <div id="documentBody">
+						<xsl:apply-templates select="gift-doc:body" />
+						<xsl:apply-templates select="table:table" />
+					</div>
+				</div>
+				<script src="http://code.jquery.com/jquery-1.7.1.min.js" />
+			    <script src="scripts/jquery.url.js" />
+			   	<script type="text/javascript" src="http://appdev.ng.cengage.com/static/steal/steal.js" /> 
+			   	<script type="text/javascript"  src="scripts/searchAndGetResults.js" />
+			</body>
+		</html>
 	</xsl:template>
 
 </xsl:stylesheet>

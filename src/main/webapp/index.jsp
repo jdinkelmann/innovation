@@ -11,7 +11,7 @@
    <script src="scripts/jquery.url.js"></script>
    <script type="text/javascript" src="http://appdev.ng.cengage.com/static/steal/steal.js"></script> 
    <script>
-   var cluiRef;
+  /* var cluiRef;
    var roomName = 'Common';
    var userName = '';
 
@@ -26,7 +26,7 @@
                                  Clui.hub.pub('app.user.list', {}, showUsers);
                               
                       });
-      });
+      }); */
    </script>
    <!-- MY Javascript -->
    <script type="text/javascript"  src="scripts/searchAndGetResults.js"></script> 
