@@ -15,29 +15,38 @@ steal('jquery','clui/app')
     INNOVATION.result = {};
 
     function init() {
-        bindClearEvents();
+       // bindClearEvents();
+        bindBackEvent();
         $('#submitSearch').click(searchAndGetResults);
         $('#query').on('keypress', function(event){
             if (event.keyCode == '13') { 
                 event.preventDefault(); 
                 searchAndGetResults();
             } 
+        });
+    }
 
+    function bindBackEvent() {
+        $(".back a").on("click", function(event){
+            event.preventDefault();
+            history.go(-1);
         });
     }
 
     function bindClearEvents() {
-        $('#query').focus(clearPreviousResults);
-        $('#contentSets').focus(clearPreviousResults);
-        $('#displayGroups').focus(clearPreviousResults);
+        // $('#query').focus(clearPreviousResults);
+        // $('#contentSets').focus(clearPreviousResults);
+        // $('#displayGroups').focus(clearPreviousResults);
 
-        function clearPreviousResults() {
-            $('#error').empty();
-            $('#searchResultsHeader').empty();
-            $('#searchResultsList').empty();
-            return false;
-        }
+        // function clearPreviousResults() {
+        //     $('#error').empty();
+        //     $('#searchResultsHeader').empty();
+        //     $('#searchResultsList').empty();
+        //     return false;
+        // }
     }
+
+    
 
     function searchAndGetResults() {
         $('.listView').empty();
@@ -60,8 +69,15 @@ steal('jquery','clui/app')
 						//console.log(results[i].docTitle);
                         var docNum = results[i].resultItem.itemIdentifier;
                         var docTitle = results[i].docTitle;
+                        var pubTitle = results[i].publicationMetadata.pubTitle;
+                        var pubYear = results[i].publicationMetadata.pubCopyrightYear;
+                        var snippet = results[i].additionaldata.Snippet;
                         var docUrl = "/HeySmartGuy/retrieve?docId=" + docNum;
-                        row = "<li><a href='"+docUrl+"'>"+ docTitle +"</li>";
+                        row = "<li><a href='"+docUrl+"'>"+ docTitle +"</a>";
+                        row = row + "<span class='pubTitle'>"+pubTitle+"</span>";
+                        row = row + "<span class='pubYear'>, "+pubYear+"</span>";
+                        row = row + "<span class='snippet'>..."+snippet+"...</span>";
+                        row = row + "</li>";
                         $('.listView').append(row);
 					}
 

@@ -10,7 +10,7 @@
 	xmlns:table="http://www.gale.com/goldschema/table"
 	exclude-result-prefixes="meta media essay gift-doc pres vault-link list verse table">
 
-	<xsl:output method="xml" omit-xml-declaration="yes" />
+	<xsl:output method="xml" encoding="utf-8" omit-xml-declaration="yes" />
 
 	<xsl:include href="xslt/BoldItalicsAndPStyles.xslt" />
 	<xsl:include href="xslt/CommonExclusions.xslt" />
@@ -21,7 +21,10 @@
 				<title>U.S. History in Context</title>
 				<link rel="stylesheet" type="text/css" href="/style/bootstrap.css" />
    				<link rel="stylesheet" type="text/css" href="/style/main.css" />
-   				
+   				<script src="http://code.jquery.com/jquery-1.7.1.min.js">//</script>
+			    <script src="/scripts/jquery.url.js" >//</script>
+			   	<script type="text/javascript" src="http://appdev.ng.cengage.com/static/steal/steal.js" >//</script> 
+			   	<script type="text/javascript"  src="/scripts/searchAndGetResults.js" >//</script>
 			</head>
 			<body>
 				<div id="galeContentWrapper" class="history">
@@ -38,14 +41,14 @@
 				         </form>
 				    </header>
 				    <div id="documentBody">
+				    	<div class="back">
+				    		<a href="#">Back to results</a>
+				    	</div>
 						<xsl:apply-templates select="gift-doc:body" />
 						<xsl:apply-templates select="table:table" />
 					</div>
 				</div>
-				<script src="http://code.jquery.com/jquery-1.7.1.min.js" />
-			    <script src="scripts/jquery.url.js" />
-			   	<script type="text/javascript" src="http://appdev.ng.cengage.com/static/steal/steal.js" /> 
-			   	<script type="text/javascript"  src="scripts/searchAndGetResults.js" />
+				
 			</body>
 		</html>
 	</xsl:template>
