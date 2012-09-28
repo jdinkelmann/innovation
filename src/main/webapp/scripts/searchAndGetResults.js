@@ -1,16 +1,43 @@
-var INNOVATION = {}; 
-var cluiRef;
-steal.map({
-    "clui": "/static/clui"
-});
+/**
+**********************************************************
+ Copyright (c) Cengage Learning 2011 - All rights reserved
+********************************************************** 
+*/
+// fix paths for UI project transition
+(function(){    
+    steal.map({
+        "clui": "/static/clui"
+    });
+})()
 
 steal('jquery','clui/app')
-               .then('nb/ui/util/jquery-query');
+      .then('thirdparty/query')
+      .then( function() {
+         Clui.app(function(){
+            cluiRef = Clui;
+            if($.query.get('data')) {
+                var data = $.query.get('data');              
+                var m = data.context.selectedText;
+                getSelectedText(m);       
+            } 
+         });
+      }); 
+
+function getSelectedText(str) {
+            var phrase = str;
+            $('#query').val(phrase);
+            $('#submitSearch').trigger('click');  
+        }
+
+var INNOVATION = {}; 
+
 (function($) {
 
     INNOVATION.askHomeworkHelper = {
         init: init
     };
+
+    
 
     INNOVATION.result = {};
 
@@ -46,6 +73,17 @@ steal('jquery','clui/app')
         // }
     }
 
+    function setSelectedText()
+    {   
+        if($.query.get('data'))
+        {
+            var data = $.query.get('data');             
+            var m = '<li> Selected Text is : <b>'+ data.context.selectedText+'</b></li>';           
+            $('ul#messages').append(m);
+            return data.context.selectedText;
+        }
+    }
+
     
 
     function searchAndGetResults() {
@@ -60,6 +98,7 @@ steal('jquery','clui/app')
         if (userSearchQuery === '') {
             $('#error').html('<div class="row"><div class="span5">&nbsp;</div><div class="span7"><h3>Paul Tunney will kill me if I let you submit that search.<br/>Please search on another topic.</h3></div></div>');
         } else {
+            $('.loader').show();
 			$.ajax({
 				url: url + userSearchQuery + '&contentSets='+userContentSets+'&displayGroups=' + userDisplayGroups + '&resultSize=' + resultSize,
 				success: function(data) {
@@ -75,9 +114,15 @@ steal('jquery','clui/app')
                         var docUrl = "/HeySmartGuy/retrieve?docId=" + docNum;
                         row = "<li><a href='"+docUrl+"'>"+ docTitle +"</a>";
                         row = row + "<span class='pubTitle'>"+pubTitle+"</span>";
-                        row = row + "<span class='pubYear'>, "+pubYear+"</span>";
-                        row = row + "<span class='snippet'>..."+snippet+"...</span>";
+                        if(pubYear.length > 0) {
+                            row = row + "<span class='pubYear'>, "+pubYear+"</span>";
+                        }
+                        if(snippet.length > 0) {
+                           row = row + "<span class='snippet'>..."+snippet+"...</span>"; 
+                        }    
+
                         row = row + "</li>";
+                        $('.loader').hide();
                         $('.listView').append(row);
 					}
 

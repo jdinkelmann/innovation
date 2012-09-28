@@ -10,24 +10,6 @@
    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
    <script src="scripts/jquery.url.js"></script>
    <script type="text/javascript" src="http://appdev.ng.cengage.com/static/steal/steal.js"></script> 
-   <script>
-   var cluiRef;
-   var roomName = 'Common';
-   var userName = '';
-
-   steal.map({
-      "clui": "/static/nb/ui/clui"
-   });
-      steal('jquery','clui/app')
-      .then('thirdparty/query')
-      .then( function() {
-         Clui.app(function(){
-                                 cluiRef = Clui;
-                                 //Clui.hub.pub('app.user.list', {}, showUsers);
-                              
-                      });
-      }); 
-   </script>
    <!-- MY Javascript -->
    <script type="text/javascript"  src="scripts/searchAndGetResults.js"></script> 
 
@@ -47,7 +29,11 @@
                </div>
          </form>
       </header>
+      <div class="loader">
+         <img src="/images/loader.gif" />
+      </div>
       <section id="results">
+
          <ul class="listView"></ul>
       </section>
    </div>

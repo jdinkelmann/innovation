@@ -84,3 +84,10 @@
 #galeContentWrapper #documentBody .smallLetters {
   font-size: 75%;
 }
+#galeContentWrapper .loader {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 250px;
+}
+/* end wrapper */
