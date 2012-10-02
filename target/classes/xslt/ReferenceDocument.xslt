@@ -10,19 +10,48 @@
 	xmlns:table="http://www.gale.com/goldschema/table"
 	exclude-result-prefixes="meta media essay gift-doc pres vault-link list verse table">
 
-	<xsl:output method="xml" omit-xml-declaration="yes" />
+	<xsl:output method="xml" encoding="utf-8" omit-xml-declaration="yes" />
 
 	<xsl:include href="xslt/BoldItalicsAndPStyles.xslt" />
 	<xsl:include href="xslt/CommonExclusions.xslt" />
+	<xsl:include href="xslt/InlineImages.xslt" />
 
 	<xsl:template match="/gift-doc:document">
-		<h1> 
-          <xsl:value-of select="//meta:title-display"/> 
-     	</h1>
+		<html>
+			<head>
+				<title>U.S. History in Context</title>
+				<link rel="stylesheet" type="text/css" href="/style/bootstrap.css" />
+   				<link rel="stylesheet" type="text/css" href="/style/main.css" />
+   				<script src="http://code.jquery.com/jquery-1.7.1.min.js">//</script>
+			    <script src="/scripts/jquery.url.js" >//</script>
+			   	<script type="text/javascript" src="http://appdev.ng.cengage.com/static/steal/steal.js" >//</script> 
+			   	<script type="text/javascript"  src="/scripts/searchAndGetResults.js" >//</script>
+			</head>
+			<body>
+				<div id="galeContentWrapper" class="history">
+				   	<header>
+				         <img src="/images/logo.png" />
+				         <form name="search" class="form-horizontal">
+				            <input type="hidden" value="ZXAA-MOD1|ZXACC-MOD1|ZXAL-VRL|ZXAE-VRL|History-US-Misc" name="contentSets" id="contentSets" />
+				            <input type="hidden" value="History-Reference" name="displayGroups" id="displayGroups" />
+				            <label for="search">Locate U.S. History Aritcles</label>
+				            <div class="input-append">
+				                   <input id="query" name="query" class="span4" type="search" />
+				                   <button id="submitSearch" class="btn" type="button">Go!</button>
+				            </div>
+				         </form>
+				    </header>
+				    <div id="documentBody">
+				    	<div class="back">
+				    		<a href="#">Back to results</a>
+				    	</div>
+						<xsl:apply-templates select="gift-doc:body" />
+						<xsl:apply-templates select="table:table" />
+					</div>
+				</div>
+				
+			</body>
+		</html>
 	</xsl:template>
-	<xsl:template match="/gift-doc:document/gift-doc:body">
-		<h1> 
-          <xsl:value-of select="//essay:pre"/> 
-     	</h1>
-	</xsl:template>
+
 </xsl:stylesheet>

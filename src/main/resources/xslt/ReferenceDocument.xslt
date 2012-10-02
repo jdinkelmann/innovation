@@ -14,6 +14,7 @@
 
 	<xsl:include href="xslt/BoldItalicsAndPStyles.xslt" />
 	<xsl:include href="xslt/CommonExclusions.xslt" />
+	<xsl:include href="xslt/InlineImages.xslt" />
 
 	<xsl:template match="/gift-doc:document">
 		<html>
