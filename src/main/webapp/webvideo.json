@@ -1,0 +1,66 @@
+{
+    "name": "WebVideo.App",
+    "displayName": "WebVideo App",
+    "version": "0.1",
+    "creator": "Cengage Learning",
+    "rootURI": "/static/iloveapps/webvideo",
+    "helpURI": "/help.html",
+    "authScheme": "OPEN_ID",
+    "annotations": {
+        "js": "/jslib/inlinewv.js"
+    },
+    "activities": {
+        "wvinline": {
+            "displayName": "WebVideo Search",
+            "description": "Search for a Web Video from YouTube and add it inline to your Reading Activity",
+            "icon": "images/youtube_activity_icon.png",
+            "category": "",
+            "placement": "INLINE",
+            "supportsAnnotations": false,
+            "supportsContextMenu": false,
+            "add": {
+                "uri": "/apps/webvideo/webvideo.html?inline=TRUE",
+                "roles": [
+                    "SUPER_ADMIN",
+                    "PRODUCTION",
+                    "VENDOR",
+                    "INSTRUCTOR"
+                ]
+            },
+            "configure": {
+                "uri": "/apps/webvideo/webvideo.html?inline=TRUE&editInline=TRUE&",
+                "roles": [
+                    "SUPER_ADMIN",
+                    "PRODUCTION",
+                    "VENDOR",
+                    "INSTRUCTOR"
+                ]
+            }
+        },
+        "wvdistinct": {
+            "displayName": "WebVideo Search",
+            "description": "Search for a Web Video from YouTube and add it as an Activity",
+            "icon": "images/youtube_activity_icon.png",
+            "category": "",
+            "placement": "DISTINCT",
+            "add": {
+                "uri": "/apps/webvideo/webvideo.html?inline=FALSE",
+                "roles": [
+                    "SUPER_ADMIN",
+                    "PRODUCTION",
+                    "VENDOR",
+                    "INSTRUCTOR"
+                ]
+            },
+            "configure": {
+                "uri": "/apps/webvideo/webvideo.html?editDistinctActivity=TRUE&",
+                "roles": [
+                    "SUPER_ADMIN",
+                    "PRODUCTION",
+                    "VENDOR",
+                    "INSTRUCTOR"
+                ]
+            }
+        }
+    }
+}

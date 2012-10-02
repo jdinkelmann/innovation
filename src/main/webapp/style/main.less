@@ -1,12 +1,12 @@
 #galeContentWrapper {
-	width: 550px;
-	margin: 10px;
-	padding: 0 10px;
+	width: 100%;
+	position: relative;
+	z-index: 1;
 
 	header {
 		overflow: hidden;
-		
 		border-bottom: 1px solid #333333;
+		padding: 10px;
 
 		img {
 			float: left;
@@ -45,6 +45,11 @@
 
 					a {
 						display: block;
+					}
+
+					input[type=checkbox] {
+						float: left;
+						margin-right: 10px;
 					}
 
 					span.pubTitle {
@@ -101,6 +106,7 @@
 
 
 	.loader {
+		display: none;
 		position: absolute;
 		top: 100px;
 		left: 250px;
@@ -108,3 +114,13 @@
 
 
 } /* end wrapper */
+
+
+#preview {
+	position: absolute;
+	width: 800px;
+	height: 600px;
+	overflow: auto;
+	display: none;
+	z-index: 1000;
+}

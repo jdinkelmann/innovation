@@ -27,5 +27,37 @@
                 "width": 600
             }
         }
+    },
+    "activities": {
+        "Reading": {
+            "displayName":"Create Gale In-context reading",
+            "description": "Choose a reading from Gale In-context products",
+            "icon":"/images/reader_icon.png",
+            "category":"other",
+            "placement": "DISTINCT",
+            "supportsAnnotations": false,
+            "supportsContextMenu": false,
+            "add": {
+                "uri":"/addActivity.jsp"
+            },
+            "configure": {
+                "uri":"/configureActvity.jsp"
+            }
+        },
+        "inlinereading": {
+            "displayName":"Create Gale In-context reading",
+            "description": "Choose a reading from Gale In-context products",
+            "icon":"/images/reader_icon.png",
+            "category":"other",
+            "placement": "INLINE",
+            "supportsAnnotations": false,
+            "supportsContextMenu": false,
+            "add": {
+                "uri":"/addActivity.jsp"
+            },
+            "configure": {
+                "uri":"/configureActvity.jsp"
+            }
+        }
     }
 }

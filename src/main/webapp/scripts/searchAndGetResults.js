@@ -4,6 +4,7 @@
 ********************************************************** 
 */
 // fix paths for UI project transition
+var INNOVATION = {}; 
 (function(){    
     steal.map({
         "clui": "/static/clui"
@@ -16,20 +17,18 @@ steal('jquery','clui/app')
          Clui.app(function(){
             cluiRef = Clui;
             if($.query.get('data')) {
-                var data = $.query.get('data');              
+                var data = $.query.get('data'); 
                 var m = data.context.selectedText;
                 getSelectedText(m);       
             } 
          });
       }); 
 
-function getSelectedText(str) {
-            var phrase = str;
-            $('#query').val(phrase);
-            $('#submitSearch').trigger('click');  
-        }
-
-var INNOVATION = {}; 
+function getSelectedText(str) { 
+        var phrase = str;
+        $('#query').val(phrase);
+        $('#submitSearch').trigger('click');   
+     }
 
 (function($) {
 
@@ -37,13 +36,12 @@ var INNOVATION = {};
         init: init
     };
 
-    
-
     INNOVATION.result = {};
 
     function init() {
        // bindClearEvents();
         bindBackEvent();
+        clearElements();
         $('#submitSearch').click(searchAndGetResults);
         $('#query').on('keypress', function(event){
             if (event.keyCode == '13') { 
@@ -58,6 +56,16 @@ var INNOVATION = {};
             event.preventDefault();
             history.go(-1);
         });
+    }
+
+    function clearElements() {
+        var url = $.url();
+        var inline = url.param('inline');
+        
+        if(inline == "true") {
+            $('header').hide();
+            $('.back').hide();
+        }
     }
 
     function bindClearEvents() {
@@ -78,16 +86,15 @@ var INNOVATION = {};
         if($.query.get('data'))
         {
             var data = $.query.get('data');             
-            var m = '<li> Selected Text is : <b>'+ data.context.selectedText+'</b></li>';           
-            $('ul#messages').append(m);
+            var m = data.context.selectedText;           
+            $('#query').val(m);
             return data.context.selectedText;
         }
     }
-
     
 
     function searchAndGetResults() {
-        $('.listView').empty();
+        //$('section').empty();
         var userSearchQuery = $('#query').val();
         var userContentSets = $('#contentSets').val();
         var userDisplayGroups = $('#displayGroups').val();
@@ -112,7 +119,11 @@ var INNOVATION = {};
                         var pubYear = results[i].publicationMetadata.pubCopyrightYear;
                         var snippet = results[i].additionaldata.Snippet;
                         var docUrl = "/HeySmartGuy/retrieve?docId=" + docNum;
-                        row = "<li><a href='"+docUrl+"'>"+ docTitle +"</a>";
+                        row = "<li>";
+                        if($('div.addActivity').length > 0) {
+                            row = row + "<input type='radio' name='douments' value='"+docNum+"' />";
+                        }
+                        row = row + "<a href='"+docUrl+"'>"+ docTitle +"</a>";
                         row = row + "<span class='pubTitle'>"+pubTitle+"</span>";
                         if(pubYear.length > 0) {
                             row = row + "<span class='pubYear'>, "+pubYear+"</span>";

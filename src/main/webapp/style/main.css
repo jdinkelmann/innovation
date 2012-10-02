@@ -1,7 +1,7 @@
 #galeContentWrapper {
-  width: 550px;
-  margin: 10px;
-  padding: 0 10px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
   /* end header */
 
   /* end section */
@@ -12,6 +12,7 @@
 #galeContentWrapper header {
   overflow: hidden;
   border-bottom: 1px solid #333333;
+  padding: 10px;
 }
 #galeContentWrapper header img {
   float: left;
@@ -44,6 +45,10 @@
 }
 #galeContentWrapper section ul li a {
   display: block;
+}
+#galeContentWrapper section ul li input[type=checkbox] {
+  float: left;
+  margin-right: 10px;
 }
 #galeContentWrapper section ul li span.pubTitle {
   font-style: italic;
@@ -91,3 +96,11 @@
   left: 250px;
 }
 /* end wrapper */
+#preview {
+  position: absolute;
+  width: 800px;
+  height: 600px;
+  overflow: auto;
+  display: none;
+  z-index: 1000;
+}
