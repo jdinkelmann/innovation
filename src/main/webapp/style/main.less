@@ -1,3 +1,8 @@
+body {
+	background: #172530 url(../images/bg.jpg) 0 67px no-repeat;
+	background-size: 100%;
+}
+
 #galeContentWrapper {
 	width: 100%;
 	position: relative;
@@ -31,12 +36,17 @@
 
 	section {
 			display: none;
-			border: 1px solid #CCCCCC;
 
 			ul {
 				list-style-type: none;
-				margin: 0;
+				margin: 0 15px;
 				padding: 0;
+				background: #fff;
+				opacity: 0.9;
+				border-top: 0px;
+				border-left: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
 
 				li {
 					list-style-type: none;
@@ -45,9 +55,10 @@
 
 					a {
 						display: block;
+						font-family: "Facitweb",Calibri,Arial,Sans;
 					}
 
-					input[type=checkbox] {
+					input[type="radio"] {
 						float: left;
 						margin-right: 10px;
 					}
@@ -72,19 +83,52 @@
 					border-top: none;
 				}
 			}
+		input[type="submit"] {
+			font-size: 100%;
+			background-color: #1A85C2;
+			color: white!important;
+			width: auto!important;
+			text-decoration: none;
+			padding: .5em 1em;
+			border: 1px solid #58BCEB;
+			cursor: pointer;
+			margin: 10px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			font-weight: 600;
+			-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+			-moz-box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+			background-image: -webkit-gradient(linear,0% 0,0% 100%,from(#13B2F1),to(#1879B1));
+			background-image: -moz-linear-gradient(0 100% 90deg,#1879B1,#13B2F1);
+		}
 	} /* end section */
 
 #documentBody {
 	border: 1px solid #CCCCCC;
+	margin: 0 15px;
 	padding: 10px;
+	background: #fff;
+	opacity: 0.9;
+	border-top: 0px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 
 	p {
 		margin: 0 0 25px 0;
 		line-height: 140%;
 	}
 
+	.inline_image {
+		float: left;
+		margin: 7px;
+	}
+
 	h1 {
 		font-size: 22px;
+		font-family: "Facitweb",Calibri,Arial,Sans;
 		background: url('../images/h1_border_bottom.gif') bottom repeat-x;
 		margin-bottom: 20px;
 	}
@@ -99,6 +143,8 @@
 	.bold {font-weight: 700;}
 	.italics { font-style: italic;}
 	.smallLetters {font-size:  75%;}
+
+
 
 
 

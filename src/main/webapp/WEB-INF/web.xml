@@ -8,12 +8,12 @@
 
 	<servlet>
 		<servlet-name>HeySmartGuyServlet</servlet-name>
-		<display-name>HeySmartGuy</display-name>
+		<display-name>UHIC</display-name>
 		<servlet-class>com.gale.craftday.homeworkhelper.HeySmartGuyServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HeySmartGuyServlet</servlet-name>
-		<url-pattern>/HeySmartGuy/*</url-pattern>
+		<url-pattern>/UHIC/*</url-pattern>
 	</servlet-mapping>	
 
 </web-app>

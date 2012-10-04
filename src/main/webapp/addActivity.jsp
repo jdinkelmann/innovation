@@ -19,23 +19,18 @@
 
 <body> 
    <div id="galeContentWrapper" class="history addActivity">
+      <form name="search" action="" class="form-horizontal" id="addActivity">
       <header>
          <img src="images/logo.png">
-         <h4>Add Reading</h4>
-      </header>
-      <div class="loader">
-         <img src="/images/loader.gif" />
-      </div>
-       <form name="search" action="" class="form-horizontal" id="addActivity">
-      <div id="searchForm">
-
-            <input type="hidden" value="ZXAA-MOD1|ZXACC-MOD1|ZXAL-VRL|ZXAE-VRL|History-US-Misc" name="contentSets" id="contentSets">
+          <input type="hidden" value="ZXAA-MOD1|ZXACC-MOD1|ZXAL-VRL|ZXAE-VRL|History-US-Misc" name="contentSets" id="contentSets">
             <input type="hidden" value="History-Reference" name="displayGroups" id="displayGroups">
             <label for="search">Locate U.S. History Aritcles</label>
             <div class="input-append">
-                   <input id="query" name="query" type="search" class="span4" type="text"><button id="submitSearch" class="btn" type="button">Go!</button>
+                   <input id="query" name="query" placeholder="Find reference materials" type="search" class="span4" type="text"><button id="submitSearch" class="btn" type="button">Go!</button>
                </div>
-         
+      </header>
+      <div class="loader">
+         <img src="/images/loader.gif" />
       </div>
       <section id="results">
 
@@ -43,10 +38,8 @@
 
           <input type="submit" value="Save" /> 
       </section>
-
-      </form>
    </div>
-
+</form>
    <div id="preview"></div>
 </body>
 </html>

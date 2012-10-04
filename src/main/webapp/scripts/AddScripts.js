@@ -33,7 +33,7 @@ var ADD = {};
         	description: data.snippet,
         	activityType: 1,
         	appActivityName: "Gale.USHistoryInContext/activities/Reading",
-        	viewURI: "/HeySmartGuy/retrieve?inline=true&docId=" + data.docNumber
+        	viewURI: "/UHIC/retrieve?inline=true&docId=" + data.docNumber
         });
     }
 })(jQuery);

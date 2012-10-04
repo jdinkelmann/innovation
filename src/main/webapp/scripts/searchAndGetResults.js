@@ -65,6 +65,9 @@ function getSelectedText(str) {
         if(inline == "true") {
             $('header').hide();
             $('.back').hide();
+            $('body').css({
+                'background-position':'top left'
+            });
         }
     }
 
@@ -79,6 +82,7 @@ function getSelectedText(str) {
         //     $('#searchResultsList').empty();
         //     return false;
         // }
+
     }
 
     function setSelectedText()
@@ -94,12 +98,13 @@ function getSelectedText(str) {
     
 
     function searchAndGetResults() {
-        //$('section').empty();
+        $('section').hide();
+        $('.listView').empty();
         var userSearchQuery = $('#query').val();
         var userContentSets = $('#contentSets').val();
         var userDisplayGroups = $('#displayGroups').val();
         var resultSize = 20;
-        var url = "/HeySmartGuy/search?query=";
+        var url = "/UHIC/search?query=";
          
 
         if (userSearchQuery === '') {
@@ -118,7 +123,7 @@ function getSelectedText(str) {
                         var pubTitle = results[i].publicationMetadata.pubTitle;
                         var pubYear = results[i].publicationMetadata.pubCopyrightYear;
                         var snippet = results[i].additionaldata.Snippet;
-                        var docUrl = "/HeySmartGuy/retrieve?docId=" + docNum;
+                        var docUrl = "/UHIC/retrieve?docId=" + docNum;
                         row = "<li>";
                         if($('div.addActivity').length > 0) {
                             row = row + "<input type='radio' name='douments' value='"+docNum+"' />";
@@ -133,10 +138,11 @@ function getSelectedText(str) {
                         }    
 
                         row = row + "</li>";
-                        $('.loader').hide();
+                        
                         $('.listView').append(row);
 					}
 
+                    $('.loader').hide();
                     $('section').show();
                     
 				}
